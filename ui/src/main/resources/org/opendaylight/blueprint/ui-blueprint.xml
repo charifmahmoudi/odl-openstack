@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+    <reference id="httpService" availability="mandatory" activation="eager" interface="org.osgi.service.http.HttpService"/>
+    <reference id="loader" availability="mandatory" activation="eager" interface="org.opendaylight.dlux.loader.DluxModuleLoader"/>
+
+    <bean id="bundle" init-method="initialize" destroy-method="clean" class="org.opendaylight.dlux.loader.DluxModule">
+        <property name="httpService" ref="httpService"/>
+        <property name="loader" ref="loader"/>
+        <property name="moduleName" value="PNI Controller"/>
+        <property name="url" value="/src/app/enforcer"/>
+        <property name="directory" value="/enforcer"/>
+        <property name="requireJs" value="app/enforcer/enforcer.module"/>
+        <property name="angularJs" value="app.enforcer"/>
+        <property name="cssDependencies">
+            <list>
+                <value>src/app/enforcer/enforcer-custom.css</value>
+            </list>
+        </property>
+    </bean>
+</blueprint>

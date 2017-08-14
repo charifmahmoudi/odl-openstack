@@ -1,0 +1,22 @@
+module enforcer {
+    yang-version 1;
+    namespace "urn:opendaylight:params:xml:ns:yang:enforcer";
+    prefix "enforcer";
+
+    revision "2015-01-05" {
+        description "Initial revision of enforcer model";
+    }
+    
+    rpc enforce {
+        input {
+            leaf source {
+                type string;
+            }
+        }
+        output {
+            leaf status {
+                type string;
+            }
+        }
+    }
+}
