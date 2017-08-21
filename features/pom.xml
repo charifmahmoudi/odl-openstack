@@ -26,6 +26,7 @@ and is available at http://www.eclipse.org/legal/epl-v10.html INTERNAL
   <name>ODL :: pni.antd.nist.gov :: ${project.artifactId}</name>
 
   <properties>
+    <netvirt.openstack.version>0.4.1-Carbon</netvirt.openstack.version>
     <mdsal.model.version>0.10.1-Carbon</mdsal.model.version>
     <mdsal.version>1.5.1-Carbon</mdsal.version>
     <openflowplugin.version>0.4.1-Carbon</openflowplugin.version>
@@ -72,6 +73,14 @@ and is available at http://www.eclipse.org/legal/epl-v10.html INTERNAL
       <scope>runtime</scope>
     </dependency>
      <dependency>
+        <groupId>org.opendaylight.netvirt</groupId>
+    <artifactId>odl-netvirt-openstack</artifactId>
+        <version>${netvirt.openstack.version}</version>
+      <classifier>features</classifier>
+        <type>xml</type>
+      <scope>runtime</scope>
+      </dependency>
+    <dependency>
         <groupId>org.opendaylight.openflowplugin</groupId>
     <artifactId>features-openflowplugin</artifactId>
         <version>${openflowplugin.version}</version>
