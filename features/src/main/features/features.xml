@@ -14,12 +14,13 @@
 	<repository>mvn:org.opendaylight.netconf/features-restconf/{{VERSION}}/xml/features</repository>
 	<repository>mvn:org.opendaylight.dluxapps/features-dluxapps/{{VERSION}}/xml/features</repository>
 	<repository>mvn:org.opendaylight.openflowplugin/features-openflowplugin/{{VERSION}}/xml/features</repository>
-	<repository>mvn:org.opendaylight.netvirt/odl-netvirt-openstack/{{VERSION}}/xml/features</repository>
+	<repository>mvn:org.opendaylight.netvirt/vpnservice-features/{{VERSION}}/xml/features</repository>
 	
 	<feature name='odl-enforcer-openstack' version='${project.version}'
 		description='OpenDaylight :: enforcer :: Openstack'>
-		<feature version='${project.version}'>odl-enforcer-api</feature>
-		<feature version="${netvirt.openstack.version}">odl-ovsdb-openstack</feature>
+		<feature version='${project.version}'>odl-enforcer</feature>
+		<feature version="${netvirt.openstack.version}">odl-netvirt-openstack</feature>
+		<feature version="${netvirt.openstack.version}">odl-netvirt-ui</feature>
 	</feature>
 	<feature name='odl-enforcer-api' version='${project.version}'
 		description='OpenDaylight :: enforcer :: api'>
